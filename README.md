@@ -10,6 +10,7 @@ In addition to providing students with information about the buildings themselve
 
 Overall, Udex-Building is a valuable resource for students of the University of Utah who wish to explore the campus and the surrounding area in greater depth. Whether students are interested in the history and culture of the region, or are simply curious about the different buildings on campus, Udex-Building offers a wealth of information and resources to help them learn and explore.
 
+### Website URL: https://udex-buildin.herokuapp.com/
 ## Available Features
 - User can see posts about building & biography of each person
 - User can log in and contribute to this wiki
