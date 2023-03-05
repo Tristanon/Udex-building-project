@@ -29,6 +29,10 @@ $  git clone https://github.com/Tristanon/Udex-building-project.git
 $  cd Udex-building-project
 ```
 3. Create environment file for backend
+```bash
+$  virtualenv venv
+$  pip install -r requirements.txt
+```
 ## Technologies
 - Front-end - HTML, CSS  
 - Fullstack - Python, Django
