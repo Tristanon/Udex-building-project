@@ -20,7 +20,7 @@
         <form action="{% url 'addComment' id=listing.id %}" method="POST" id="comment">
             {% csrf_token %}
             <div class="form-group">
-                <label for="price" class="form-label">Add Comment as <strong>{{listing.author}}</strong>:</label>
+                <label for="price" class="form-label">Add Comment:</label>
                 <input style="width: 100%; height: 50px; text-align: justify; margin-bottom: 10px;" type="text"  name="newComment" placeholder="Add a New Comment">
                 <button type="submit" class="btn btn-dark">Add</button>
             </div>
