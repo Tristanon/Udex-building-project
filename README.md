@@ -26,7 +26,7 @@ Overall, Udex-Building is a valuable resource for students of the University of 
 2.Clone this repository on your local machine
 ```http
 $  git clone https://github.com/Tristanon/Udex-building-project.git
-$  cd RocPlanner
+$  cd Udex-building-project
 ```
 ## Technologies
 - Front-end - HTML, CSS  
