@@ -25,8 +25,8 @@ Overall, Udex-Building is a valuable resource for students of the University of 
 1.Install Python on your machine
 2.Clone this repository on your local machine
 ```http
-  git clone https://github.com/Tristanon/Udex-building-project.git
-  cd RocPlanner
+$  git clone https://github.com/Tristanon/Udex-building-project.git
+$  cd RocPlanner
 ```
 ## Technologies
 - Front-end - HTML, CSS  
