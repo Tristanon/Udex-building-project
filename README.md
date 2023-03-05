@@ -24,7 +24,7 @@ Overall, Udex-Building is a valuable resource for students of the University of 
 ## Installation 
 - Install Python on your machine
 - Clone this repository on your local machine
-```http
+```bash
 $  git clone https://github.com/Tristanon/Udex-building-project.git
 $  cd Udex-building-project
 ```
