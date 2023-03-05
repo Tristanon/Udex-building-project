@@ -33,6 +33,7 @@ $  cd Udex-building-project
 $  virtualenv venv
 $  pip install -r requirements.txt
 ```
+## Run locally
 ## Technologies
 - Front-end - HTML, CSS  
 - Fullstack - Python, Django
