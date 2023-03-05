@@ -20,7 +20,7 @@ Overall, Udex-Building is a valuable resource for students of the University of 
 - Design the page of wiki (in Django, HTML, CSS, Bootstrap)
 - Login feature
 - Contribute to this wiki 
-- Like/Dislike and Comment (design database & backend APIs) 
+- Comment (design database & backend APIs) 
 ## Installation 
 ## Technologies
 - Fullstack - Django
