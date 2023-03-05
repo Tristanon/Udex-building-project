@@ -34,6 +34,13 @@ $  virtualenv venv
 $  pip install -r requirements.txt
 ```
 ## Run locally
+```bash
+$  python manage.py runserver
+```
+```bash
+$  python manage.py makemigrations
+$  python manage.py migrate
+```
 ## Technologies
 - Front-end - HTML, CSS  
 - Fullstack - Python, Django
