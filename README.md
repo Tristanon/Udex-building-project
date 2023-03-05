@@ -47,3 +47,4 @@ $  python manage.py migrate
 - Front-end - HTML, CSS  
 - Fullstack - Python, Django
 - Database - SQLite3
+- Host - Heroku
