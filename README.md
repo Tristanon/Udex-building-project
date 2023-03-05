@@ -28,6 +28,7 @@ Overall, Udex-Building is a valuable resource for students of the University of 
 $  git clone https://github.com/Tristanon/Udex-building-project.git
 $  cd Udex-building-project
 ```
+3. Create environment file for backend
 ## Technologies
 - Front-end - HTML, CSS  
 - Fullstack - Python, Django
