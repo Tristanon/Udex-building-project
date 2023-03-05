@@ -23,5 +23,6 @@ Overall, Udex-Building is a valuable resource for students of the University of 
 - Comment (design database & backend APIs) 
 ## Installation 
 ## Technologies
-- Fullstack - Django
-- Database - MySQL
+- Front-end - HTML, CSS  
+- Fullstack - Python, Django
+- Database - SQLite3
