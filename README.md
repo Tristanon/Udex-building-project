@@ -19,9 +19,9 @@ Overall, Udex-Building is a valuable resource for students of the University of 
 - User can like/dislike and comment each post
 ## Action items
 - Write descriptions about building and biography (text file) - 2 buildings (copy from school page)
-- Design the page of wiki (in Django, HTML, CSS, Bootstrap)
+- Design the page of Udex-building (in Django, HTML, CSS, Bootstrap)
 - Login feature
-- Contribute to this wiki 
+- Contribute to this Udex-building 
 - Comment (design database & backend APIs) 
 ## Installation 
 1. Install Python on your machine
@@ -44,7 +44,7 @@ $  python manage.py makemigrations
 $  python manage.py migrate
 ```
 ## Technologies
-- Front-end - HTML, CSS  
+- Front-end - HTML, CSS , Bootstrap
 - Fullstack - Python, Django
 - Database - SQLite3
 - Host - Heroku
