@@ -1,0 +1,63 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block body %}
+    <h2>{{ listing.title }}</h2>
+    <hr style="background-color: black; height: 5px;">
+    <div id="des">
+        <img id="URL" src="{{ listing.imageUrl}}" alt="">
+        <h4 style="margin-top: 20px; text-align: center; color: red;"><strong>{{ listing.title }}</strong></h4>
+        <ul>
+            <li><strong>Completed: </strong>{{ listing.Completed }}</li>
+            <li><strong>Named for: </strong>{{ listing.NameFor }}</li>
+            <li><strong>Architect: </strong>{{ listing.Architect }}</li>
+            <li><strong>Style: </strong>{{ listing.Style }}</li>
+            <li><strong>Materials: </strong>{{ listing.Materials }}</li>
+        </ul>
+        <p>{{ listing.description }}</p>
+    </div>
+    <div id="Comment">
+        {% if user.is_authenticated %}
+        <form action="{% url 'addComment' id=listing.id %}" method="POST" id="comment">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="price" class="form-label">Add Comment as <strong>{{listing.author}}</strong>:</label>
+                <input style="width: 100%; height: 50px; text-align: justify; margin-bottom: 10px;" type="text"  name="newComment" placeholder="Add a New Comment">
+                <button type="submit" class="btn btn-dark">Add</button>
+            </div>
+            </form>
+        {% endif %}
+        <ul style="width: 100%;" class="list-group">
+            {% for comment in allComments %}
+                <li  class="list-group-item">
+                    <strong>{{comment.author}}</strong>: {{comment.message}}
+                </li>
+            {% endfor %}
+        </ul>   
+    </div>
+    
+    <style>
+        #des{
+            margin-top: 40px;
+        }
+
+        #des p,ul {
+            width: 60%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #URL{
+            width: 60%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #Comment{
+            width: 60%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+{% endblock %}

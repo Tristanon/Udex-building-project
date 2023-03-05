@@ -1,0 +1,31 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block body %}
+
+    <h2>Register</h2>
+    <hr style="background-color: black; height: 5px;">
+
+    {% if message %}
+        <div>{{ message }}</div>
+    {% endif %}
+
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input class="form-control" autofocus type="text" name="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="email" name="email" placeholder="Email Address">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="password" name="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="password" name="confirmation" placeholder="Confirm Password">
+        </div>
+        <input class="btn btn-danger" type="submit" value="Register">
+    </form>
+
+    <div style="margin: 5px;">Already have an account? <a style="color: #cc0000;" href="{% url 'login' %}">Log In here.</a></div>
+
+{% endblock %}

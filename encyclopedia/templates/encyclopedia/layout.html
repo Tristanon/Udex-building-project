@@ -1,0 +1,126 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="" id="container">
+            <div class="" id="left-section">
+                <div id="left-content">
+                    <hr style="background-color: white; height: 1px; margin-bottom: -1px;">
+                    <img id="logo" src="https://user-images.githubusercontent.com/106542253/221388702-f67d3bcf-8d53-4dcb-ac76-5a35c0237fc8.png" alt="">
+                    <hr style="background-color: white; height: 1px; margin-top: 9px;">
+                    <img style="margin-left: -10px; margin-top: -5px; width: 100%;" src="https://go.utah.edu/cas/images/uofu/ulogo_white.png" alt="">
+                    <div>
+                        {% if user.is_authenticated %}
+                            Signed in as <strong>{{ user.username }}</strong>.
+                        {% else %}
+                            Not signed in.
+                        {% endif %}
+                    </div>
+                    <form action="{% url 'search' %}" method="POST">
+                        {% csrf_token %}
+                        <input id="menu" style="margin-top: 10px;" class="search" type="text" name="q" placeholder="Search Building">
+                    </form>
+                    <div style="margin-top: 10px;">
+                        <a id="menu" style="margin-top: 20px;" href="{% url 'index' %}">Home</a>
+                        {% if user.is_authenticated %}
+                            <div style="margin-top: 10px;">
+                                <a id="menu" href="{% url 'create' %}">Create Page</a>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <a id="menu" href="{% url 'random_page' %}">About us</a>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <a  class="" id="menu" href="{% url 'logout' %}">Log Out</a>
+                            </div>
+                        {% else %}
+                            <div style="margin-top: 10px;">
+                                <a class="a" id="menu" href="{% url 'login' %}">Log In</a>
+                            </div style="margin-top: 10px;">
+                            <div style="margin-top: 10px;"> 
+                                <a class="" id="menu" href="{% url 'register' %}">Register</a>
+                            </div>
+
+                        {% endif %}
+
+                    </div> 
+                    <div id="In4">
+                        <p><img style="height:50px;" src="https://user-images.githubusercontent.com/106542253/221437656-b233982d-4be3-45cc-a81e-7f97abaa2ef3.png" alt=""> <a style="color: white;" href="https://github.com/Tristanon">Github</a></p>
+                        <p><img style="height:37px; margin-left: 7px; margin-right: 5px; " src="https://user-images.githubusercontent.com/106542253/221437938-8418431b-34d5-47b8-8fae-da0fd5dc46ad.png" alt=""> <a style="color: white;" href="https://www.linkedin.com/in/tri-ho-2a4b58249/">Linkedin</a></p>   
+                    </div>
+                    
+                </div>
+        
+                <!-- {% block nav %}
+                {% endblock %} -->
+            </div>
+            <div id="connection" style="height: auto;">
+            </div>
+            <div class="" id="right-section">
+                <div id="right-content">
+                    {% block body %}
+                    {% endblock %}  
+                </div>
+                
+            </div>
+        </div>
+
+        <style>
+            html,body{
+                height: auto;
+            }
+            #container{
+                display: flex;
+                height: auto;
+            }
+
+            #left-section{
+                background-color: #cc0000;
+                width: 23%;
+                height: auto%;
+            }
+
+            #left-content{
+                margin: 20px;
+                color: white;
+            }
+
+            #logo{
+                margin: -15px;
+                width:110%;
+            }
+
+            #menu {
+                color: white;
+            }
+
+            #In4{
+                margin-top: 50px;
+                margin-left: -10px;
+            }
+
+            #connection{
+                width: 1%;
+                background-color: #333333;
+            }
+
+            #right-section{
+                min-height: 100vh;
+                width: 100%;
+                height: 100%;
+            }
+
+            #right-content{
+                margin: 20px;
+            }
+
+
+        </style>
+    </body>
+</html>

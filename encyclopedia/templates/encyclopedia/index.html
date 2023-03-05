@@ -1,0 +1,49 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h2>All Building</h2>
+    <hr style="background-color: black; height: 5px;">
+    <form action="{% url 'displayCategory' %}" method="POST" class="my-3">
+      {% csrf_token %}
+        <select style="height: 40px; border-radius: 10px;" name="category" id="categories">
+            {% for category in categories %}
+                <option value= "{{ category }}">{{ category }}</option>
+            {% endfor %}
+        </select> 
+      <button style="margin-top: -4px;" type="submit" class="btn btn-dark">Select</button>  
+    </form>
+    {% for listing in listings%}
+        <div class="card mb-3" style="width: 100%; margin-top: 30px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{{ listing.imageUrl }}" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <a style="color: black" href="{% url 'listing' id=listing.id %}"><h5 class="card-title">{{ listing.title }}</h5></a>
+                  <ul>
+                    <li><strong>Located in: </strong>{{ listing.Location }}</li>
+                  </ul>
+                  <ul>
+                    <li><strong>Address: </strong>{{ listing.Address }}</li>
+                  </ul>
+                  <ul>
+                    <li><strong>Phone: </strong>{{ listing.Phone }}</li>
+                  </ul>
+                  <p class="card-text"><small class="text-muted">Created by {{ listing.author}}</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+    {% endfor %}
+    <!-- <ul>
+        {% for entry in entries %}
+            <li><a style="color: black;" href="{% url 'entry' title=entry %}">{{ entry }}</a></li>
+        {% endfor %}
+    </ul> -->
+
+{% endblock %}
