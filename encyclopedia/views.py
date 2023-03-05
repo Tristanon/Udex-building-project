@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
 from django.http import HttpResponseRedirect
+from django.db.models import Q
 import markdown
 import random
 from django.urls import reverse
@@ -172,23 +173,34 @@ def createListing(request):
     
 def search(request):
     if request.method == "POST":
-        entry_search = request.POST['q']
-        html_content = convert_md_to_html(entry_search)
-        if html_content is not None:
-            return render(request, "encyclopedia/entry.html",{
-            "title": entry_search,
-            "content": html_content,
-            })
-        else:
-            allEntries = util.list_entries()
-            recommendation = []
-            for entry in allEntries:
-                if entry in allEntries:
-                    if entry_search.lower() in entry.lower():
-                        recommendation.append(entry)
-            return render(request, "encyclopedia/search.html",{
-                    "recommendation": recommendation,
-            })
+        building_search = request.POST['search']
+        buildings = Listing.objects.filter(Q(description__contains = building_search)| Q(title__contains=building_search) | Q(NameFor__contains=building_search))
+        return render(request, "encyclopedia/search.html",{
+            "building_search": building_search,
+            "buildings" : buildings
+        })
+    else:
+        return render(request, "encyclopedia/search.html",{})
+    
+
+
+        # activeListings = Listing.objects.filter(isActive=True)
+        # html_content = convert_md_to_html(entry_search)
+        # if html_content is not None:
+        #     return render(request, "encyclopedia/entry.html",{
+        #     "title": entry_search,
+        #     "content": html_content,
+        #     })
+        # else:
+        #     allEntries = util.list_entries()
+        #     recommendation = []
+        #     for entry in allEntries:
+        #         if entry in allEntries:
+        #             if entry_search.lower() in entry.lower():
+        #                 recommendation.append(entry)
+        #     return render(request, "encyclopedia/search.html",{
+        #             "recommendation": recommendation,
+        #     })
 
 def new_page(request):
     if request.method == "GET":

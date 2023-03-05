@@ -25,7 +25,7 @@
                     </div>
                     <form action="{% url 'search' %}" method="POST">
                         {% csrf_token %}
-                        <input id="menu" style="margin-top: 10px; width: 100%;" class="search" type="text" name="q" placeholder="Search Building">
+                        <input id="menu" style="margin-top: 10px; width: 100%; color: black;" class="search" type="text" name="search" placeholder="Search Building">
                     </form>
                     <div style="margin-top: 10px;">
                         <a id="menu" style="margin-top: 20px;" href="{% url 'index' %}">Home</a>

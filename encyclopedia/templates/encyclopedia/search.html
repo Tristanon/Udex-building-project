@@ -1,16 +1,35 @@
 {% extends "encyclopedia/layout.html" %}
 
-{% block title %}
-    Encyclopedia
-{% endblock %}
-
 {% block body %}
-    <h1>Search</h1>
-
-    <ul>
-        {% for entry in recommendation %}
-            <li><a href="{% url 'entry' title=entry %}">{{ entry }}</a></li>
+    <h2>Search</h2>
+    <hr style="background-color: black; height: 5px;">
+    {% if building_search %}
+        {% for building in buildings %}
+            <div class="card mb-3" style="width: 100%; margin-top: 30px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{ building.imageUrl }}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <a style="color: black" href="{% url 'listing' id=building.id %}"><h5 class="card-title">{{ building.title }}</h5></a>
+                            <ul>
+                                <li><strong>Located in: </strong>{{ building.Location }}</li>
+                            </ul>
+                            <ul>
+                                <li><strong>Address: </strong>{{ building.Address }}</li>
+                            </ul>
+                            <ul>
+                                <li><strong>Phone: </strong>{{ building.Phone }}</li>
+                            </ul>
+                            <p class="card-text"><small class="text-muted">Created by {{ building.author}}</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         {% endfor %}
-    </ul>
+    {% else %}
+        <p>Hey! You forgot to search</p>
+    {% endif %}
 
 {% endblock %}
