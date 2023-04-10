@@ -2,7 +2,9 @@
 ## Image
 ![](https://user-images.githubusercontent.com/106542253/222948094-af4c30ac-0323-487d-ba70-bffd654caa42.png)
 ## Description
-Udex-Building is a website that has been specifically created for the students of the University of Utah to provide them with detailed information about the different buildings and structures located within the campus and the surrounding Salt Lake City area. The website  is designed to be an essential resource for students who want to learn more about the buildings on the University of Utah campus and in the city of Salt Lake. The site provides students with a comprehensive overview of the buildings, including their uses, histories, and notable features, allowing students to gain a deeper understanding of the rich culture and history of the region.
+- Udex-Building is a website that has been specifically created for the students of the University of Utah to provide them with detailed information about the different buildings and structures located within the campus and the surrounding Salt Lake City area.
+- The website  is designed to be an essential resource for students who want to learn more about the buildings on the University of Utah campus and in the city of Salt Lake.
+- The site provides students with a comprehensive overview of the buildings, including their uses, histories, and notable features, allowing students to gain a deeper understanding of the rich culture and history of the region.
 
 #### Website URL: https://udex-buildin.herokuapp.com/
 ## Available Features
