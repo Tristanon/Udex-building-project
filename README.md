@@ -17,12 +17,7 @@ Overall, Udex-Building is a valuable resource for students of the University of 
 - User can see posts about building & biography of each person
 - User can log in and contribute to this wiki
 - User can like/dislike and comment each post
-## Action items
-- Write descriptions about building and biography (text file) - 2 buildings (copy from school page)
-- Design the page of Udex-building (in Django, HTML, CSS, Bootstrap)
-- Login feature
-- Contribute to this Udex-building 
-- Comment (design database & backend APIs) 
+
 ## Installation 
 1. Install Python on your machine
 2. Clone this repository on your local machine
